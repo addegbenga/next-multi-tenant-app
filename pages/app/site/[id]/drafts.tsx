@@ -107,7 +107,7 @@ export default function SiteDrafts() {
                         </p>
                         <a
                           className="absolute px-3 py-1 tracking-wide text-gray-600 bg-gray-200 rounded font-cal bottom-5 left-10 whitespace-nowrap"
-                          href={`https://${data.site?.subdomain}.vercel.app/${post.slug}`}
+                          href={`https://${data.site?.subdomain}.startblogging.xyz/${post.slug}`}
                           rel="noreferrer"
                           target="_blank"
                         >

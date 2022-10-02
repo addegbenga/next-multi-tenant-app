@@ -58,7 +58,7 @@ export default function Post({
     description: data.description,
     logo: "/logo.png",
     ogImage: data.image,
-    ogUrl: `https://${data.site?.subdomain}.xyz/${data.slug}`,
+    ogUrl: `https://${data.site?.subdomain}.startblogging.xyz/${data.slug}`,
     title: data.title,
   } as Meta;
 
