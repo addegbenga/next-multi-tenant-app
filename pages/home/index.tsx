@@ -16,6 +16,7 @@ export default function Home() {
           src="/logo.png"
           alt="Platforms on Vercel"
         />
+        ..
       </div>
     </div>
   );
