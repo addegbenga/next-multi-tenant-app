@@ -3,7 +3,7 @@
 
 datasource db {
   provider             = "mysql"
-  url                  = env("DATABASE_URL")
+  url                  = "mysql://addegbenga:keephustle001@localhost:3309/platforms"
   referentialIntegrity = "prisma"
 }
 
