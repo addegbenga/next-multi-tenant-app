@@ -50,9 +50,9 @@ export default function SiteDrafts() {
 
   return (
     <Layout>
-      <div className="py-20 max-w-screen-xl mx-auto px-10 sm:px-20">
-        <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-between items-center">
-          <h1 className="font-cal text-5xl">
+      <div className="max-w-screen-xl px-10 py-20 mx-auto sm:px-20">
+        <div className="flex flex-col items-center justify-between space-y-5 sm:flex-row sm:space-y-0">
+          <h1 className="text-5xl font-cal">
             {" "}
             Drafts for {data ? data?.site?.name : "..."}
           </h1>
@@ -76,13 +76,13 @@ export default function SiteDrafts() {
             )}
           </button>
         </div>
-        <div className="my-10 grid gap-y-10">
+        <div className="grid my-10 gap-y-10">
           {data ? (
             data.posts.length > 0 ? (
               data.posts.map((post) => (
                 <Link href={`/post/${post.id}`} key={post.id}>
                   <a>
-                    <div className="flex flex-col md:flex-row md:h-60 rounded-lg overflow-hidden border border-gray-200">
+                    <div className="flex flex-col overflow-hidden border border-gray-200 rounded-lg md:flex-row md:h-60">
                       <div className="relative w-full h-60 md:h-auto md:w-1/3 md:flex-none">
                         {post.image ? (
                           <BlurImage
@@ -92,26 +92,26 @@ export default function SiteDrafts() {
                             src={post.image}
                           />
                         ) : (
-                          <div className="absolute flex items-center justify-center w-full h-full bg-gray-100 text-gray-500 text-4xl">
+                          <div className="absolute flex items-center justify-center w-full h-full text-4xl text-gray-500 bg-gray-100">
                             ?
                           </div>
                         )}
                       </div>
                       <div className="relative p-10">
-                        <h2 className="font-cal text-3xl">
+                        <h2 className="text-3xl font-cal">
                           {post.title || "Untitled Post"}
                         </h2>
-                        <p className="text-base my-5">
+                        <p className="my-5 text-base">
                           {post.description ||
                             "No description provided. Click to edit."}
                         </p>
                         <a
-                          className="font-cal px-3 py-1 tracking-wide rounded bg-gray-200 text-gray-600 absolute bottom-5 left-10 whitespace-nowrap"
-                          href={`https://${data.site?.subdomain}.vercel.pub/${post.slug}`}
+                          className="absolute px-3 py-1 tracking-wide text-gray-600 bg-gray-200 rounded font-cal bottom-5 left-10 whitespace-nowrap"
+                          href={`https://${data.site?.subdomain}.vercel.app/${post.slug}`}
                           rel="noreferrer"
                           target="_blank"
                         >
-                          {data.site?.subdomain}.vercel.pub/{post.slug} ↗
+                          {data.site?.subdomain}.vercel.app/{post.slug} ↗
                         </a>
                       </div>
                     </div>
@@ -120,17 +120,17 @@ export default function SiteDrafts() {
               ))
             ) : (
               <>
-                <div className="flex flex-col md:flex-row md:h-60 rounded-lg overflow-hidden border border-gray-200">
-                  <div className="relative w-full h-60 md:h-auto md:w-1/3 md:flex-none bg-gray-300" />
-                  <div className="relative p-10 grid gap-5">
-                    <div className="w-28 h-10 rounded-md bg-gray-300" />
-                    <div className="w-48 h-6 rounded-md bg-gray-300" />
-                    <div className="w-48 h-6 rounded-md bg-gray-300" />
-                    <div className="w-48 h-6 rounded-md bg-gray-300" />
+                <div className="flex flex-col overflow-hidden border border-gray-200 rounded-lg md:flex-row md:h-60">
+                  <div className="relative w-full bg-gray-300 h-60 md:h-auto md:w-1/3 md:flex-none" />
+                  <div className="relative grid gap-5 p-10">
+                    <div className="h-10 bg-gray-300 rounded-md w-28" />
+                    <div className="w-48 h-6 bg-gray-300 rounded-md" />
+                    <div className="w-48 h-6 bg-gray-300 rounded-md" />
+                    <div className="w-48 h-6 bg-gray-300 rounded-md" />
                   </div>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl font-cal text-gray-600">
+                  <p className="text-2xl text-gray-600 font-cal">
                     No drafts yet. Click &quot;New Draft&quot; to create one.
                   </p>
                 </div>
@@ -140,14 +140,14 @@ export default function SiteDrafts() {
             [0, 1].map((i) => (
               <div
                 key={i}
-                className="flex flex-col md:flex-row md:h-60 rounded-lg overflow-hidden border border-gray-200"
+                className="flex flex-col overflow-hidden border border-gray-200 rounded-lg md:flex-row md:h-60"
               >
-                <div className="relative w-full h-60 md:h-auto md:w-1/3 md:flex-none bg-gray-300 animate-pulse" />
-                <div className="relative p-10 grid gap-5">
-                  <div className="w-28 h-10 rounded-md bg-gray-300 animate-pulse" />
-                  <div className="w-48 h-6 rounded-md bg-gray-300 animate-pulse" />
-                  <div className="w-48 h-6 rounded-md bg-gray-300 animate-pulse" />
-                  <div className="w-48 h-6 rounded-md bg-gray-300 animate-pulse" />
+                <div className="relative w-full bg-gray-300 h-60 md:h-auto md:w-1/3 md:flex-none animate-pulse" />
+                <div className="relative grid gap-5 p-10">
+                  <div className="h-10 bg-gray-300 rounded-md w-28 animate-pulse" />
+                  <div className="w-48 h-6 bg-gray-300 rounded-md animate-pulse" />
+                  <div className="w-48 h-6 bg-gray-300 rounded-md animate-pulse" />
+                  <div className="w-48 h-6 bg-gray-300 rounded-md animate-pulse" />
                 </div>
               </div>
             ))

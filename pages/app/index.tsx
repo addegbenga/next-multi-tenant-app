@@ -192,12 +192,12 @@ export default function AppIndex() {
                         </p>
                         <a
                           className="absolute px-3 py-1 tracking-wide text-gray-600 bg-gray-200 rounded font-cal bottom-5 left-10 whitespace-nowrap"
-                          href={`https://${site.subdomain}.vercel.pub`}
+                          href={`https://${site.subdomain}.vercel.app`}
                           onClick={(e) => e.stopPropagation()}
                           rel="noreferrer"
                           target="_blank"
                         >
-                          {site.subdomain}.vercel.pub ↗
+                          {site.subdomain}.vercel.app ↗
                         </a>
                       </div>
                     </div>

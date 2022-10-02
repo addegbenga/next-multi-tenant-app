@@ -71,11 +71,11 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
           scrolled ? "drop-shadow-md" : ""
         }  top-0 left-0 right-0 h-16 bg-white z-30 transition-all ease duration-150 flex`}
       >
-        <div className="flex justify-center items-center space-x-5 h-full max-w-screen-xl mx-auto px-10 sm:px-20">
+        <div className="flex items-center justify-center h-full max-w-screen-xl px-10 mx-auto space-x-5 sm:px-20">
           <Link href="/" passHref>
-            <a className="flex justify-center items-center">
+            <a className="flex items-center justify-center">
               {meta?.logo && (
-                <div className="h-8 w-8 inline-block rounded-full overflow-hidden align-middle">
+                <div className="inline-block w-8 h-8 overflow-hidden align-middle rounded-full">
                   <Image
                     alt={meta?.title}
                     height={40}
@@ -122,7 +122,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
             </svg>
           </button>
           <div className="text-center lg:text-left">
-            <p className="font-cal text-lg sm:text-2xl text-black">
+            <p className="text-lg text-black font-cal sm:text-2xl">
               Platforms Starter Kit Demo
             </p>
             <p
@@ -133,7 +133,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
               This is a demo site showcasing how to build a multi-tenant
               application with{" "}
               <a
-                className="text-black font-semibold underline"
+                className="font-semibold text-black underline"
                 href="https://platformize.co"
                 rel="noreferrer"
                 target="_blank"
@@ -149,7 +149,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
             } flex space-y-3 sm:space-y-0 sm:space-x-3 sm:flex-row flex-col lg:w-auto w-full text-center`}
           >
             <a
-              className="flex-auto font-cal text-lg rounded-md py-1 sm:py-3 px-5 text-black border border-gray-200 hover:border-black transition-all ease-in-out duration-150 whitespace-no-wrap"
+              className="flex-auto px-5 py-1 text-lg text-black whitespace-no-wrap transition-all duration-150 ease-in-out border border-gray-200 rounded-md font-cal sm:py-3 hover:border-black"
               href="https://app.vercel.pub"
               rel="noreferrer"
               target="_blank"
@@ -157,7 +157,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
               Create your publication
             </a>
             <a
-              className="flex-auto font-cal text-lg bg-black text-white border border-black rounded-md py-1 sm:py-3 px-5 hover:text-black hover:bg-white transition-all ease-in-out duration-150 whitespace-no-wrap"
+              className="flex-auto px-5 py-1 text-lg text-white whitespace-no-wrap transition-all duration-150 ease-in-out bg-black border border-black rounded-md font-cal sm:py-3 hover:text-black hover:bg-white"
               href="https://vercel.com/guides/nextjs-multi-tenant-application"
               rel="noreferrer"
               target="_blank"
