@@ -118,9 +118,7 @@ export default function SiteSettings() {
 
         const available = await response.json();
 
-        setSubdomainError(
-          available ? null : `${debouncedSubdomain}.vercel.app`
-        );
+        setSubdomainError(available ? null : `${debouncedSubdomain}.xyz`);
       } catch (error) {
         console.error(error);
       }

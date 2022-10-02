@@ -58,21 +58,21 @@ export default function Post({
     description: data.description,
     logo: "/logo.png",
     ogImage: data.image,
-    ogUrl: `https://${data.site?.subdomain}.vercel.pub/${data.slug}`,
+    ogUrl: `https://${data.site?.subdomain}.xyz/${data.slug}`,
     title: data.title,
   } as Meta;
 
   return (
     <Layout meta={meta} subdomain={data.site?.subdomain ?? undefined}>
-      <div className="flex flex-col justify-center items-center">
-        <div className="text-center w-full md:w-7/12 m-auto">
-          <p className="text-sm md:text-base font-light text-gray-500 w-10/12 m-auto my-5">
+      <div className="flex flex-col items-center justify-center">
+        <div className="w-full m-auto text-center md:w-7/12">
+          <p className="w-10/12 m-auto my-5 text-sm font-light text-gray-500 md:text-base">
             <Date dateString={data.createdAt.toString()} />
           </p>
-          <h1 className="font-bold text-3xl font-cal md:text-6xl mb-10 text-gray-800">
+          <h1 className="mb-10 text-3xl font-bold text-gray-800 font-cal md:text-6xl">
             {data.title}
           </h1>
-          <p className="text-md md:text-lg text-gray-600 w-10/12 m-auto">
+          <p className="w-10/12 m-auto text-gray-600 text-md md:text-lg">
             {data.description}
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function Post({
           target="_blank"
         >
           <div className="my-8">
-            <div className="relative w-8 h-8 md:w-12 md:h-12 rounded-full overflow-hidden inline-block align-middle">
+            <div className="relative inline-block w-8 h-8 overflow-hidden align-middle rounded-full md:w-12 md:h-12">
               {data.site?.user?.image ? (
                 <BlurImage
                   alt={data.site?.user?.name ?? "User Avatar"}
@@ -96,18 +96,18 @@ export default function Post({
                   width={80}
                 />
               ) : (
-                <div className="absolute flex items-center justify-center w-full h-full bg-gray-100 text-gray-500 text-4xl select-none">
+                <div className="absolute flex items-center justify-center w-full h-full text-4xl text-gray-500 bg-gray-100 select-none">
                   ?
                 </div>
               )}
             </div>
-            <div className="inline-block text-md md:text-lg align-middle ml-3">
+            <div className="inline-block ml-3 align-middle text-md md:text-lg">
               by <span className="font-semibold">{data.site?.user?.name}</span>
             </div>
           </div>
         </a>
       </div>
-      <div className="relative h-80 md:h-150 w-full max-w-screen-lg lg:w-2/3 md:w-5/6 m-auto mb-10 md:mb-20 md:rounded-2xl overflow-hidden">
+      <div className="relative w-full max-w-screen-lg m-auto mb-10 overflow-hidden h-80 md:h-150 lg:w-2/3 md:w-5/6 md:mb-20 md:rounded-2xl">
         {data.image ? (
           <BlurImage
             alt={data.title ?? "Post image"}
@@ -118,18 +118,18 @@ export default function Post({
             src={data.image}
           />
         ) : (
-          <div className="absolute flex items-center justify-center w-full h-full bg-gray-100 text-gray-500 text-4xl select-none">
+          <div className="absolute flex items-center justify-center w-full h-full text-4xl text-gray-500 bg-gray-100 select-none">
             ?
           </div>
         )}
       </div>
 
-      <article className="w-11/12 sm:w-3/4 m-auto prose prose-md sm:prose-lg">
+      <article className="w-11/12 m-auto prose sm:w-3/4 prose-md sm:prose-lg">
         <MDXRemote {...data.mdxSource} components={components} />
       </article>
 
       {adjacentPosts.length > 0 && (
-        <div className="relative mt-10 sm:mt-20 mb-20">
+        <div className="relative mt-10 mb-20 sm:mt-20">
           <div
             className="absolute inset-0 flex items-center"
             aria-hidden="true"
@@ -137,14 +137,14 @@ export default function Post({
             <div className="w-full border-t border-gray-300" />
           </div>
           <div className="relative flex justify-center">
-            <span className="px-2 bg-white text-sm text-gray-500">
+            <span className="px-2 text-sm text-gray-500 bg-white">
               Continue Reading
             </span>
           </div>
         </div>
       )}
       {adjacentPosts && (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8 mx-5 lg:mx-12 2xl:mx-auto mb-20 max-w-screen-xl">
+        <div className="grid max-w-screen-xl grid-cols-1 mx-5 mb-20 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8 lg:mx-12 2xl:mx-auto">
           {adjacentPosts.map((data, index) => (
             <BlogCard key={index} data={data} />
           ))}

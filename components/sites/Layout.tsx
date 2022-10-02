@@ -150,7 +150,7 @@ export default function Layout({ meta, children, subdomain }: LayoutProps) {
           >
             <a
               className="flex-auto px-5 py-1 text-lg text-black whitespace-no-wrap transition-all duration-150 ease-in-out border border-gray-200 rounded-md font-cal sm:py-3 hover:border-black"
-              href="https://app.vercel.pub"
+              href="https://startblogging.xyz"
               rel="noreferrer"
               target="_blank"
             >

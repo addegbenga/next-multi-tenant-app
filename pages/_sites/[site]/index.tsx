@@ -32,7 +32,7 @@ export default function Index({ stringifiedData }: IndexProps) {
     ogImage: data.image,
     ogUrl: data.customDomain
       ? data.customDomain
-      : `https://${data.subdomain}.vercel.app`,
+      : `https://${data.subdomain}.xyz`,
   } as Meta;
 
   return (
