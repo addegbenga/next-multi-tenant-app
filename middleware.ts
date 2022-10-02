@@ -39,7 +39,7 @@ export default function middleware(req: NextRequest) {
           .replace(`.platformize.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
   // rewrites for app pages
-  if (currentHost == "app") {
+  if (currentHost == "next-multi-tenant-app") {
     if (
       url.pathname === "/login" &&
       (req.cookies.get("next-auth.session-token") ||
@@ -49,7 +49,7 @@ export default function middleware(req: NextRequest) {
       return NextResponse.redirect(url);
     }
 
-    url.pathname = `/app${url.pathname}`;
+    url.pathname = `/next-multi-tenant-app${url.pathname}`;
     return NextResponse.rewrite(url);
   }
 
