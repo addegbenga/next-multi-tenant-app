@@ -37,7 +37,7 @@ export default function middleware(req: NextRequest) {
       ? hostname.replace(`.xyz`, "").replace(`.platformize.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
   // rewrites for app pages
-  if (currentHost == "startblogging") {
+  if (currentHost == "app") {
     if (
       url.pathname === "/login" &&
       (req.cookies.get("next-auth.session-token") ||
