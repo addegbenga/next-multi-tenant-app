@@ -32,7 +32,7 @@ export default function middleware(req: NextRequest) {
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
       ? hostname
-          .replace(`.next-multi-tenant-app.vercel.app`, "")
+          .replace(`.vercel.app`, "")
           .replace(`.platformize.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
   // rewrites for app pages
