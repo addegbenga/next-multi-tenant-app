@@ -108,7 +108,7 @@ export default function SiteIndex() {
                           rel="noreferrer"
                           target="_blank"
                         >
-                          {data.site?.subdomain}.vercel.app/{post.slug} ↗
+                          {data.site?.subdomain}.startblogging.xyz/{post.slug} ↗
                         </a>
                       </div>
                     </div>

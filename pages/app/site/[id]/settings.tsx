@@ -118,7 +118,9 @@ export default function SiteSettings() {
 
         const available = await response.json();
 
-        setSubdomainError(available ? null : `${debouncedSubdomain}.xyz`);
+        setSubdomainError(
+          available ? null : `${debouncedSubdomain}.startblogging.xyz`
+        );
       } catch (error) {
         console.error(error);
       }
@@ -223,7 +225,7 @@ export default function SiteSettings() {
                 value={data.subdomain || ""}
               />
               <div className="flex items-center justify-center w-1/2 h-12 bg-gray-100 border-l border-gray-600 rounded-r-lg font-cal">
-                vercel.app
+                startblogging.xyz
               </div>
             </div>
             {subdomainError && (

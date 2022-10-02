@@ -111,7 +111,7 @@ export default function SiteDrafts() {
                           rel="noreferrer"
                           target="_blank"
                         >
-                          {data.site?.subdomain}.xyz/{post.slug} ↗
+                          {data.site?.subdomain}.startblogging.xyz/{post.slug} ↗
                         </a>
                       </div>
                     </div>

@@ -126,7 +126,7 @@ export default function PostSettings() {
               <h2 className="text-2xl font-cal">Post Slug</h2>
               <div className="flex items-center max-w-lg border border-gray-700 rounded-lg">
                 <span className="px-5 border-r border-gray-600 rounded-l-lg font-cal whitespace-nowrap">
-                  {settings?.site?.subdomain}.xyz/
+                  {settings?.site?.subdomain}.startblogging.xyz/
                 </span>
                 <input
                   className="w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border-none rounded-none rounded-r-lg font-cal focus:outline-none focus:ring-0"

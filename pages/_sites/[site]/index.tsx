@@ -32,7 +32,7 @@ export default function Index({ stringifiedData }: IndexProps) {
     ogImage: data.image,
     ogUrl: data.customDomain
       ? data.customDomain
-      : `https://${data.subdomain}.xyz`,
+      : `https://${data.subdomain}.startblogging.xyz`,
   } as Meta;
 
   return (

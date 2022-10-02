@@ -35,7 +35,7 @@ export default function AppIndex() {
         if (available) {
           setError(null);
         } else {
-          setError(`${debouncedSubdomain}.vercel.app`);
+          setError(`${debouncedSubdomain}.startblogging.xyz`);
         }
       }
     }
@@ -106,7 +106,7 @@ export default function AppIndex() {
                 type="text"
               />
               <span className="flex items-center h-full px-5 bg-gray-100 border-l border-gray-600 rounded-r-lg">
-                .vercel.xyz
+                .startblogging.xyz
               </span>
             </div>
             {error && (
@@ -192,12 +192,12 @@ export default function AppIndex() {
                         </p>
                         <a
                           className="absolute px-3 py-1 tracking-wide text-gray-600 bg-gray-200 rounded font-cal bottom-5 left-10 whitespace-nowrap"
-                          href={`https://${site.subdomain}.xyz`}
+                          href={`https://${site.subdomain}.startblogging.xyz`}
                           onClick={(e) => e.stopPropagation()}
                           rel="noreferrer"
                           target="_blank"
                         >
-                          {site.subdomain}.vercel.app ↗
+                          {site.subdomain}.startblogging.xyz ↗
                         </a>
                       </div>
                     </div>
