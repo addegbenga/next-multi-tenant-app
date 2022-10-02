@@ -3,7 +3,7 @@
 
 datasource db {
   provider             = "mysql"
-  url                  = "https://app.planetscale.com/addegbenga/platforms" 
+  url                  = "mysql://addegbenga:keephustle001@app.planetscale.com/addegbenga/platforms" 
   referentialIntegrity = "prisma"
 }
 
