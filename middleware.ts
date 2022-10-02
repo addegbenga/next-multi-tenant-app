@@ -34,9 +34,7 @@ export default function middleware(req: NextRequest) {
       still need to add "*.platformize.vercel.app" as a wildcard domain on your Vercel dashboard. */
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
-      ? hostname
-          .replace(`.startblogging.xyz`, "")
-          .replace(`.platformize.vercel.app`, "")
+      ? hostname.replace(`.xyz`, "").replace(`.platformize.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
   // rewrites for app pages
   if (currentHost == "startblogging") {
