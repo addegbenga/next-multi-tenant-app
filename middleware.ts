@@ -49,7 +49,7 @@ export default function middleware(req: NextRequest) {
       return NextResponse.redirect(url);
     }
 
-    url.pathname = `/next-multi-tenant-app${url.pathname}`;
+    url.pathname = `/app${url.pathname}`;
     return NextResponse.rewrite(url);
   }
 
