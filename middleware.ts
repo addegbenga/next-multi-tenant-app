@@ -32,9 +32,7 @@ export default function middleware(req: NextRequest) {
       still need to add "*.platformize.vercel.app" as a wildcard domain on your Vercel dashboard. */
   const currentHost =
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
-      ? hostname
-          .replace(`.vercel.app`, "")
-          .replace(`.platformize.vercel.app`, "")
+      ? hostname.replace(`.vercel.app`, "").replace(`.qwikker.vercel.app`, "")
       : hostname.replace(`.localhost:3000`, "");
   // rewrites for app pages
   if (currentHost == "app") {
@@ -52,7 +50,7 @@ export default function middleware(req: NextRequest) {
   }
 
   // rewrite root application to `/home` folder
-  if (hostname === "localhost:3000" || hostname === "platformize.vercel.app") {
+  if (hostname === "localhost:3000" || hostname === "qwikker.vercel.app") {
     url.pathname = `/home${url.pathname}`;
     return NextResponse.rewrite(url);
   }
