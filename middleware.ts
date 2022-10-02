@@ -21,13 +21,13 @@ export default function middleware(req: NextRequest) {
   const hostname = req.headers.get("host") || "demo.vercel.pub";
 
   // Only for demo purposes - remove this if you want to use your root domain as the landing page
-  if (
-    hostname === "next-multi-tenant-app.vercel.app" ||
-    hostname === "platforms.vercel.app"
-  ) {
-    return NextResponse.redirect("https://demo.vercel.pub");
-  }
-  console.log(hostname);
+  // if (
+  //   hostname === "next-multi-tenant-app.vercel.app" ||
+  //   hostname === "platforms.vercel.app"
+  // ) {
+  //   return NextResponse.redirect("https://demo.vercel.pub");
+  // }
+
   /*  You have to replace ".vercel.pub" with your own domain if you deploy this example under your domain.
       You can also use wildcard subdomains on .vercel.app links that are associated with your Vercel team slug
       in this case, our team slug is "platformize", thus *.platformize.vercel.app works. Do note that you'll
