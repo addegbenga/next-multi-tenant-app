@@ -199,9 +199,8 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
       },
     },
   })) as _SiteData;
-  alert(JSON.stringify(data));
 
-  if (!data) return { notFound: true, revalidate: 10 };
+  // if (!data) return { notFound: true, revalidate: 10 };
 
   return {
     props: {
