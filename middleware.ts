@@ -56,8 +56,8 @@ export default function middleware(req: NextRequest) {
     url.pathname = `/home${url.pathname}`;
     return NextResponse.rewrite(url);
   }
-  const dimp = "dimp";
+
   // rewrite everything else to `/_sites/[site] dynamic route
-  url.pathname = `/_sites/${currentHost}${dimp}`;
+  url.pathname = `/_sites/${currentHost}`;
   return NextResponse.rewrite(url);
 }
