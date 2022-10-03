@@ -25,8 +25,6 @@ export default function Index({ stringifiedData }: IndexProps) {
 
   const data = JSON.parse(stringifiedData) as _SiteData;
 
-  console.log(data, "my data");
-
   const meta = {
     title: data.name,
     description: data.description,
@@ -34,7 +32,7 @@ export default function Index({ stringifiedData }: IndexProps) {
     ogImage: data.image,
     ogUrl: data.customDomain
       ? data.customDomain
-      : `https://${data.subdomain}.startblogging.xyz`,
+      : `https://${data.subdomain}.vercel.pub`,
   } as Meta;
 
   return (
@@ -141,7 +139,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
           customDomain: null,
         },
         // you can remove this if you want to generate all sites at build time
-        // customDomain: "platformize.co",
+        customDomain: "platformize.co",
       },
       select: {
         customDomain: true,
@@ -153,6 +151,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
     ...subdomains.map(({ subdomain }) => subdomain),
     ...customDomains.map(({ customDomain }) => customDomain),
   ].filter((path) => path) as Array<string>;
+
   return {
     paths: allPaths.map((path) => ({
       params: {
@@ -166,7 +165,6 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
   params,
 }) => {
-  console.log(params);
   if (!params) throw new Error("No path parameters found");
 
   const { site } = params;
@@ -200,9 +198,8 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
       },
     },
   })) as _SiteData;
-  console.log(data);
 
-  // if (!data) return { notFound: true, revalidate: 10 };
+  if (!data) return { notFound: true, revalidate: 10 };
 
   return {
     props: {
