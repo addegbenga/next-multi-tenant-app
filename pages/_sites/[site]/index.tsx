@@ -25,6 +25,8 @@ export default function Index({ stringifiedData }: IndexProps) {
 
   const data = JSON.parse(stringifiedData) as _SiteData;
 
+  console.log(data, "my data");
+
   const meta = {
     title: data.name,
     description: data.description,
@@ -151,7 +153,6 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
     ...subdomains.map(({ subdomain }) => subdomain),
     ...customDomains.map(({ customDomain }) => customDomain),
   ].filter((path) => path) as Array<string>;
-  console.log(allPaths);
   return {
     paths: allPaths.map((path) => ({
       params: {
@@ -199,6 +200,7 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
       },
     },
   })) as _SiteData;
+  console.log(data);
 
   // if (!data) return { notFound: true, revalidate: 10 };
 
