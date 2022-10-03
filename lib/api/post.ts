@@ -55,7 +55,7 @@ export async function getPost(
           site: true,
         },
       });
-
+      console.log(post);
       return res.status(200).json(post);
     }
 

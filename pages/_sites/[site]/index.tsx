@@ -199,7 +199,6 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
       },
     },
   })) as _SiteData;
-  console.log(data);
   if (!data) return { notFound: true, revalidate: 10 };
 
   return {
