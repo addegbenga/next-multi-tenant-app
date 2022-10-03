@@ -151,7 +151,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
     ...subdomains.map(({ subdomain }) => subdomain),
     ...customDomains.map(({ customDomain }) => customDomain),
   ].filter((path) => path) as Array<string>;
-
+  console.log(allPaths);
   return {
     paths: allPaths.map((path) => ({
       params: {
@@ -165,6 +165,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
   params,
 }) => {
+  console.log(params);
   if (!params) throw new Error("No path parameters found");
 
   const { site } = params;
@@ -198,7 +199,7 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
       },
     },
   })) as _SiteData;
-
+  console.log(data);
   if (!data) return { notFound: true, revalidate: 10 };
 
   return {
