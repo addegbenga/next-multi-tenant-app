@@ -126,9 +126,9 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
   const [subdomains, customDomains] = await Promise.all([
     prisma.site.findMany({
       // you can remove this if you want to generate all sites at build time
-      // where: {
-      //   subdomain: "demo",
-      // },
+      where: {
+        subdomain: "demo",
+      },
       select: {
         subdomain: true,
       },
