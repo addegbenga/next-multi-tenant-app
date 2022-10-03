@@ -50,7 +50,7 @@ export default function middleware(req: NextRequest) {
     url.pathname = `/app${url.pathname}`;
     return NextResponse.rewrite(url);
   }
-  console.log("jddjdj");
+
   // rewrite root application to `/home` folder
   if (hostname === "localhost:3000" || hostname === "platformize.vercel.app") {
     url.pathname = `/home${url.pathname}`;
@@ -58,6 +58,6 @@ export default function middleware(req: NextRequest) {
   }
 
   // rewrite everything else to `/_sites/[site] dynamic route
-  url.pathname = `/_sites/${currentHost}`;
+  url.pathname = `/_sites/${currentHost}${url.pathname}`;
   return NextResponse.rewrite(url);
 }
