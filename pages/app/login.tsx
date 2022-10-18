@@ -8,8 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 const pageTitle = "Login";
 const logo = "/favicon.ico";
-const description =
-  "Platforms Starter Kit is a comprehensive template for building multi-tenant applications with custom domains.";
+const description = " building multi-tenant applications with custom domains.";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
@@ -24,7 +23,7 @@ export default function Login() {
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="flex flex-col justify-center min-h-screen py-12 bg-gray-100 sm:px-6 lg:px-8">
       <Head>
         <title>{pageTitle}</title>
         <link rel="icon" href={logo} />
@@ -45,14 +44,14 @@ export default function Login() {
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@Elegance" />
-        <meta name="twitter:creator" content="@StevenTey" />
+        <meta name="twitter:site" content="@addegbenga" />
+        <meta name="twitter:creator" content="@addegbenga" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={logo} />
       </Head>
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="relative mx-auto h-12 w-auto">
+        <div className="relative w-auto h-12 mx-auto">
           <Image
             alt="Platforms Starter Kit"
             layout="fill"
@@ -60,24 +59,13 @@ export default function Login() {
             src="/logo.png"
           />
         </div>
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Platforms Starter Kit
+        <h2 className="mt-6 text-3xl font-extrabold text-center text-gray-900">
+          Multi tenant app with NextJs
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Build multi-tenant applications with custom domains. <br /> Read the{" "}
-          <a
-            className="font-medium text-black hover:text-gray-800"
-            href="https://demo.vercel.pub/platforms-starter-kit"
-            rel="noreferrer"
-            target="_blank"
-          >
-            blog post
-          </a>
-        </p>
       </div>
 
-      <div className="mt-8 mx-auto sm:w-full w-11/12 sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow-md sm:rounded-lg sm:px-10">
+      <div className="w-11/12 mx-auto mt-8 sm:w-full sm:max-w-md">
+        <div className="px-4 py-8 bg-white shadow-md sm:rounded-lg sm:px-10">
           <button
             disabled={loading}
             onClick={() => {

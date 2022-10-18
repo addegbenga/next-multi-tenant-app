@@ -25,8 +25,6 @@ export default function Index({ stringifiedData }: IndexProps) {
 
   const data = JSON.parse(stringifiedData) as _SiteData;
 
-  console.log(data, "my data");
-
   const meta = {
     title: data.name,
     description: data.description,
