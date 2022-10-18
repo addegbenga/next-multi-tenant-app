@@ -62,7 +62,7 @@ export default function Login() {
         <h2 className="mt-6 text-3xl font-extrabold text-center text-gray-900">
           Multi tenant app with NextJs
         </h2>
-        <p>
+        <p className="my-4 text-center">
           Create and share blog post with friends with a custom subdomain. just
           like a mini hashnode.
         </p>
